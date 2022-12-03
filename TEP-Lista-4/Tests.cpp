@@ -191,4 +191,54 @@ void v_subset_move_test()
 	c_tree22.vPrintTree();
 	//*/
 
+
+
+
+
 };
+
+void templateTreeTest() {
+	cout << endl << "testing T subtree Dynamic:" << endl;
+	CTreeDynamic<double> c_treeT1;
+	CTreeDynamic<char> c_treeT2;
+	CTreeDynamic<string> c_treeT3;
+	//filling c_treeT1
+	for (int i = 0; i < 3; i++)
+	{
+		c_treeT1.pcGetRoot()->vAddNewChild();
+		c_treeT1.pcGetRoot()->pcGetChild(i)->vSetValue(i + 1);
+	}
+	c_treeT1.pcGetRoot()->pcGetChild(2)->vAddNewChild();
+	c_treeT1.pcGetRoot()->pcGetChild(2)->pcGetChild(0)->vSetValue(2.4);
+
+	cout << endl << "c_treeT1 Dynamic:" << endl;
+	c_treeT1.vPrintTree();
+
+	//filling c_treeT2
+	for (int i = 0; i < 3; i++)
+	{
+		c_treeT2.pcGetRoot()->vAddNewChild();
+		c_treeT2.pcGetRoot()->pcGetChild(i)->vSetValue(i + 60);
+	}
+	c_treeT2.pcGetRoot()->pcGetChild(2)->vAddNewChild();
+	c_treeT2.pcGetRoot()->pcGetChild(2)->pcGetChild(0)->vSetValue(78);
+
+	cout << endl << "c_treeT2 Dynamic:" << endl;
+	c_treeT2.vPrintTree();
+
+
+	//filling c_treeT3
+	///*
+	//c_treeT3.pcGetRoot()->vSetValue("basic");
+	for (int i = 0; i < 3; i++)
+	{
+		c_treeT3.pcGetRoot()->vAddNewChild();
+		c_treeT3.pcGetRoot()->pcGetChild(i)->vSetValue( ((string)"abra") + (char)(i+65) );
+	}
+	c_treeT3.pcGetRoot()->pcGetChild(2)->vAddNewChild();
+	c_treeT3.pcGetRoot()->pcGetChild(2)->pcGetChild(0)->vSetValue("78");
+
+	cout << endl << "c_treeT3 Dynamic:" << endl;
+	c_treeT3.vPrintTree();
+	//*/
+}

@@ -7,31 +7,7 @@ using namespace std;
 template<typename T> class CNodeDynamic
 {
 public:
-	CNodeDynamic()
-	{
-		string tempType = sGetKnownType();
-		if (tempType=="int")
-		{
-			i_val = 0;
-		}
-		else if (tempType == "double")
-		{
-			i_val = 0;
-		}
-		else if (tempType == "float")
-		{
-			i_val = 0;
-		}
-		else if (tempType == "char")
-		{
-			i_val = '0';
-		}
-		else
-		{
-			i_val = NULL;
-		}
-		pc_parent_node = NULL;
-	};;
+	CNodeDynamic();
 	~CNodeDynamic()
 	{
 		v_children.clear();

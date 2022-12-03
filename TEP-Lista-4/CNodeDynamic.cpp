@@ -18,24 +18,58 @@ string CNodeDynamic<double>::sGetKnownType()
 	string s_type = "double";
 	return(s_type);
 }
+template <>
 string CNodeDynamic<char>::sGetKnownType()
 {
 	string s_type = "char";
 	return(s_type);
 }
+template <>
 string CNodeDynamic<float>::sGetKnownType()
 {
 	string s_type = "float";
 	return(s_type);
 }
+template <>
 string CNodeDynamic<string>::sGetKnownType()
 {
 	string s_type = "string";
 	return(s_type);
 }
+template <typename T>
+CNodeDynamic<T>::CNodeDynamic()
+{
+	i_val = NULL;
+	pc_parent_node = NULL;
+};
+template <>
 CNodeDynamic<string>::CNodeDynamic()
 {
 	i_val = "default";
+	pc_parent_node = NULL;
+};
+template <>
+CNodeDynamic<int>::CNodeDynamic()
+{
+	i_val = 0;
+	pc_parent_node = NULL;
+};
+template <>
+CNodeDynamic<double>::CNodeDynamic()
+{
+	i_val = 0;
+	pc_parent_node = NULL;
+};
+template <>
+CNodeDynamic<float>::CNodeDynamic()
+{
+	i_val = 0;
+	pc_parent_node = NULL;
+};
+template <>
+CNodeDynamic<char>::CNodeDynamic()
+{
+	i_val = '0';
 	pc_parent_node = NULL;
 };
 

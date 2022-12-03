@@ -9,4 +9,4 @@
 
 void v_tree_test();
 void v_subset_move_test();
-
+void templateTreeTest();
